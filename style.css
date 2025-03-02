@@ -12,38 +12,47 @@ button{
 }
 
 header{
-    display: flex;
+    display: grid;
+    grid-template-columns: 10% auto;
     width: 80vw;
     height: 5vh;
     background: #7a4ae231;
     border-radius: 16px;
     align-items: center;
-    justify-items: end;
+    padding: 1px 1vw;
+    transition: 0.5s ease-in-out;
 }
 
 nav{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: end;
+    align-items: center;
+    flex-grow: 1; 
 }
 
 nav>button{
     font-family: "Raleway";
     height: 70%;
+    min-width: 108px;
     margin-right: 1vw;
     border: none;
     background-color: transparent;
-    font-size: 18px;
+    font-size: 20px;
     text-wrap: nowrap;
     font-weight: 400;
-    min-width: 9vw;
     color: #FFFFFF80;
     transition: 0.3s ease-in-out;
     transform: scale(0.95);
 }
 
 nav button:nth-of-type(1){
+    text-shadow: 0px 2px 5px black;
     color: #7B4AE280;
     font-weight: 700;
+}
+
+nav button:nth-of-type(6){
+    min-width: 190px;
 }
 
 nav button:hover{
@@ -53,32 +62,89 @@ nav button:hover{
     transform: scale(1);
 }
 
-@media (max-width: 1440px) {
-    nav>button {
-        font-size: 20px;
-    }
+nav button:active{
+    transition: 0.1s ease-in-out;
+    font-weight: 600;
+    color: #450dbe;
+    transform: scale(0.95);
 }
 
-@media (max-width: 1024px) {
-    nav>button {
-        font-size: 16px;
-    }
+#menu{
+    display: none;
+    color: #FFFFFF80;
+    justify-self: end;
+    margin-right: 5%;
+    font-size: 40px;
+    font-weight: 900;
+    transition: 0.3s ease-in-out;
+}
+
+.active {
+    position: fixed;
+    top: 6.4vh;
+    width: 81.9vw;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border: 1px solid gray;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-10%);
+    transform: translateX(-1.3%);
+}
+
+.active.show {
+    max-height: 500px; /* Достаточно для всех кнопок */
+    opacity: 1;
+    transform: translateY(0);
+    transform: translateX(-1.3%);
+}
+
+
+.active>button{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
+@media (max-width: 1230px) {
+        #menu{
+            display: block;
+        }
+    
+        nav{
+            display: none;
+        }
+    
+        nav>button {
+            font-size: 20px;
+        }
 }
 
 @media (max-width: 768px) {
-    nav>button {
-        font-size: 14px;
+    #menu{
+        display: block;
+    }
+
+    nav{
+        display: none;
     }
 }
 
 @media (max-width: 480px) {
-    nav>button {
-        font-size: 12px;
+    #menu{
+        display: block;
+    }
+
+    nav{
+        display: none;
     }
 }
 
-@media (max-width: 2560px) {
+@media (min-width: 1950px) {
     nav>button {
-        font-size: 24px;
+        font-size: 30px;
     }
 }
