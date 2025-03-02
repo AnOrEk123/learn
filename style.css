@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 body{
     background: #090E16;
     display: flex;
     justify-content: center;
+}
+
+button{
+    cursor: pointer;
 }
 
 header{
@@ -10,11 +17,68 @@ header{
     height: 5vh;
     background: #7a4ae231;
     border-radius: 16px;
-    justify-content: end;
     align-items: center;
+    justify-items: end;
 }
 
-header>button{
+nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav>button{
+    font-family: "Raleway";
     height: 70%;
     margin-right: 1vw;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    text-wrap: nowrap;
+    font-weight: 400;
+    min-width: 9vw;
+    color: #FFFFFF80;
+    transition: 0.3s ease-in-out;
+    transform: scale(0.95);
+}
+
+nav button:nth-of-type(1){
+    color: #7B4AE280;
+    font-weight: 700;
+}
+
+nav button:hover{
+    text-shadow: 0px 2px 5px black;
+    font-weight: 700;
+    color: #7B4AE280;
+    transform: scale(1);
+}
+
+@media (max-width: 1440px) {
+    nav>button {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    nav>button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav>button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav>button {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 2560px) {
+    nav>button {
+        font-size: 24px;
+    }
 }
