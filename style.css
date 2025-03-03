@@ -23,6 +23,12 @@ header{
     transition: 0.5s ease-in-out;
 }
 
+header>img{
+    width: 4vh;
+    height: 4vh;
+}
+
+
 nav{
     display: flex;
     justify-content: end;
@@ -112,6 +118,7 @@ nav button:active{
 @media (max-width: 1230px) {
         #menu{
             display: block;
+            font-size: 30px;
         }
     
         nav{
@@ -125,6 +132,7 @@ nav button:active{
 
 @media (max-width: 768px) {
     #menu{
+        font-size: 30px;
         display: block;
     }
 
@@ -135,6 +143,7 @@ nav button:active{
 
 @media (max-width: 480px) {
     #menu{
+        font-size: 20px;
         display: block;
     }
 
